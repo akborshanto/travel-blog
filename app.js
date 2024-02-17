@@ -19,6 +19,21 @@ for (let btn of addBtn) {
     li.appendChild(p);
     li.appendChild(p2);
     selectedPlaceContainer.appendChild(li);
+/* budget */
+let  budget=document.getElementById('budget').innerText;
+const convertedBudget=parseInt(budget)
+if(convertedBudget - parseInt(price) < 0){
+  
+alert("LOW BUDGET MONA")
+return
+}
+
+document.getElementById('budget').innerText=convertedBudget - parseInt( price)
+
+//console.log(convertedBudget)
+
+
+
     /* TotalCost */
     totalCost("total-cost", parseInt(price));
     /* grandTotal */
@@ -33,6 +48,7 @@ function setElementText(id, value) {
   const element = (document.getElementById(id).innerText = value);
 }
 
+
 /* totalCost */
 function totalCost(id, value) {
   let totalCost = document.getElementById(id).innerText;
@@ -44,7 +60,7 @@ function totalCost(id, value) {
 }
 /* grandTotalCost */
 function grandTotalCost(category) {
-  console.log(category)
+ // console.log(category)
   const totalCost = document.getElementById("total-cost").innerText;
   const convertedGrandTotal = parseInt(totalCost);
   //const sum2 = convertedGrandTotal + parseInt(value);
